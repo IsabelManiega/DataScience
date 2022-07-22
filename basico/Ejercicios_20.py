@@ -12,9 +12,9 @@
 """
 
 def generar_n_caracteres(n, caracter):
-    # TODO: tome un entero n
-    # TODO: devuelva el caracter multiplicado por n
-    pass
+    return n * caracter
+
+print(generar_n_caracteres(5, 'x'))
 
 # EJERCICIO 2
 
@@ -25,13 +25,10 @@ def generar_n_caracteres(n, caracter):
 """
 
 def procedimiento(lista):
-    # TODO: tome una lista de numeros enteros
-    # TODO: imprimir en la pantalla:
+    for i in lista:
+        print(i * "x")
 
-    # XXXX
-    # XXXXXXXXX
-    # XXXXXXX
-    pass
+procedimiento([4, 9, 7])
 
 # EJERCICIO 3
 
@@ -40,9 +37,13 @@ def procedimiento(lista):
 """
 
 def mas_larga(lista):
-    # TODO: tome una lista de palabras
-    # TODO: devolver la más larga
-    pass
+    mas_larga = ""
+    for i in lista:
+        if len(i) > len(mas_larga):
+            mas_larga = i
+    return mas_larga
+
+print(mas_larga(["coche", "tortuga", "bici"]))
 
 # EJERCICIO 4
 
@@ -52,9 +53,11 @@ def mas_larga(lista):
 """
 
 def filtrar_palabras(lista, n):
-    # TODO: tome una lista de palabras y un entero n
-    # TODO: devolver las palabras que tengan n caracteres
-    pass
+    for i in lista:
+        if len(i) > n:
+            print(i)
+
+filtrar_palabras(["coche", "tortuga", "bici"], 4)
 
 # EJERCICIO 5
 
