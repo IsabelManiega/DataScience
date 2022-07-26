@@ -67,10 +67,13 @@ filtrar_palabras(["coche", "tortuga", "bici"], 4)
 """
 
 def c_mayusculas(cadena):
-    # TODO: ingrese una cadena de texto
-    # TODO:evaluar la cadena
-    # TODO: returnar cuantas letras mayúsculas tiene
-    pass
+    cont = 0
+    for i in cadena:
+        if i != i.lower(): #Recordar que lower() convierte una cadena en minúsculas
+            cont += 1
+    print("La cadena tiene", cont, "mayuscula/s")
+
+c_mayusculas("Mas que Coches")
 
 # EJERCICIO 6
 
@@ -80,9 +83,13 @@ def c_mayusculas(cadena):
 """
 
 def mayores(tup):
-    # TODO: definir una tupla de 10 edades de personas
-    # TODO: imprimir la cantidad de personas con edades superiores a 20
-    pass
+    cont = 0
+    for i in tup:
+        if i > 20:
+            cont += 1
+    print("Hay", cont, "numeros mayores a 20")
+    
+mayores((15, 20, 16, 31, 40, 50, 11, 13, 48, 60))
 
 # EJERCICIO 7
 
@@ -92,12 +99,21 @@ def mayores(tup):
 """
 
 def main():
-    # TODO: definir cuantos nombres quieres ingresar
-    # TODO: definir una lista con el numero de elementos
-    # TODO: pedir los nombres que pertenecen a la lista
-    # TODO: definir por que letra comienza el nombre
-    # TODO: imprimir la cantidad de nombres que empiezan por la letra
-    pass
+    x = int(input("Cuantos nombres quieres ingresar?: "))
+    lista = []
+    for i in range(x):
+        a = input("Ingresa el nombre: ")
+        lista.append(a)   
+    print("\n")
+    
+    comienzo = input("Con que letra empieza el nombre?: ")
+    cont = 0
+    for i in lista:
+        if i[0] == comienzo.lower() or i[0] == comienzo.upper() :
+            cont += 1
+    return cont
+
+main()
 
 # EJERCICIO 8
 
@@ -109,11 +125,15 @@ def main():
 """
 
 def contar_vocales(cadena):
-    # TODO: recibir una palabra
-    # TODO: contabilizar cuantas letras tiene de "a"
-    # TODO: contabilizar cuantas letras tiene de "e"
-    # TODO: contabilizar cuantas letras tiene de "i"
-    # TODO: contabilizar cuantas letras tiene de "o"
-    # TODO: contabilizar cuantas letras tiene de "u"
-    pass
+    cadena = cadena.lower()
+    vocales = "aeiou"
+
+    for x in vocales:
+        contador = 0
+        for i in cadena:
+            if i == x:
+                contador += 1
+        print("Hay %d %s." % (contador, x))
+
+contar_vocales("Hola Mundo")
 
