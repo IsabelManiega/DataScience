@@ -44,3 +44,31 @@ def cuadrado(n):
     devuelva un diccionario con las palabras que contiene y su longitud.
     Ejemplo: "Hola Mundo" --> {"Hola": 4, "Mundo": 5}
 """
+
+# EJERCICIO 4
+
+"""
+    Escribir una función reciba una lista de notas y
+    devuelva la lista de calificaciones correspondientes a esas notas.
+    Suspenso < 5
+    Aprobado = 5
+    Suficiente entre 5 - 7
+    Notable 7-9
+    Sobresaliente > 9
+"""
+
+# EJERCICIO 5
+
+"""
+    Escribir una función que reciba un diccionario con las asignaturas y
+    las notas de un alumno y devuelva otro diccionario con las asignaturas en mayúsculas
+    y las calificaciones correspondientes a las notas.
+"""
+
+# EJERCICIO 6
+
+"""
+    Escribir un programa que almacene la cadena de caracteres contraseña en una variable,
+    pregunte al usuario por la contraseña e imprima por pantalla si la contraseña introducida
+    por el usuario coincide con la guardada en la variable sin tener en cuenta mayúsculas y minúsculas.
+"""
