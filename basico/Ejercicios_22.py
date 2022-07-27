@@ -7,17 +7,45 @@
     y utilice la función pasada para aplicar los descuentos o el IVA a los productos de la cesta y devolver el precio final de la cesta.
     Ejemplo de diccionario: {1000:20, 500:10, 100:1}
 """
+
 def apply_discount(price, discount):
-    # TODO: retorna precio  menos precio con descuento dividido entre 100
-    pass
-
+    '''
+    Función que aplica un descuento a una cantidad.
+    Parámetros:
+        price: Es un valor real con el precio al que aplicar el descuento.
+        discount: Es el porcentaje a descontar.
+    Devuelve:
+        El precio final tras aplicar el descuento.
+    '''
+    return price - price * discount / 100
+    
 def apply_IVA(price, percentage):
-    # TODO: retorna el precio  suma precio por el porcentaje dividido por 100
-    pass
+    '''
+    Función que aplica un IVA a una cantidad.
+    Parámetros:
+        price: Es un valor real con el precio al que aplicar el IVA.
+        percentage: Es el porcentaje del IVA a aplicar.
+    Devuelve:
+        El precio final tras aplicar el IVA.
+    '''
+    return price + price * percentage / 100
 
-def price_basket(basket, funcion):
-    # TODO: retorna descuento o IVA
-    pass
+def price_basket(basket, function):
+    '''
+    Función que calcula el precio de una cesta de la compra una vez aplicada una función a los precios iniciales.
+    Parámetros:
+        basket: Es un diccionario formado por pares precio:descuento.
+        function: Es una función que toma dos valores reales y devuelve otro. Normalmente para aplicar descuentos o IVA.
+    Devuelve:
+        El precio final de la cesta de la compra una vez aplicada la función sobre los precios iniciales.
+    '''
+    total = 0
+    for price, discount in basket.items():
+        total += function(price, discount)
+    return total
+
+print('El precio de la compra tras aplicar los descuentos es: ', price_basket({1000:20, 500:10, 100:1}, apply_discount))
+print('El precio de la compra tras aplicar el IVA es: ', price_basket({1000:20, 500:10, 100:1}, apply_IVA))
 
 # EJERCICIO 2
 
@@ -28,14 +56,23 @@ def price_basket(basket, funcion):
 """
 
 def aplica_funcion_lista(funcion, lista):
-    # TODO: recorrer la lista
-    # TODO: apendizar los resultados de la función en una lista vacia
-    # TODO: retorne la lista final
-    pass
+    '''Función que aplica una función a todos los elementos de una lista.
+
+    Parámetros:
+        funcion: Es una función.
+        lista: Es una lista con valores que se pasarán como argumentos a funcion.
+    Devuelve:
+        Una lista con el resultado de aplicar la función a los valores de la lista.
+    '''
+    l = []
+    for i in lista:
+        l.append(funcion(i))
+    return l
 
 def cuadrado(n):
-    # TODO: retorne n * n
-    pass
+    return n * n
+
+print(aplica_funcion_lista(cuadrado, [1, 2, 3, 4]))
 
 # EJERCICIO 3
 
@@ -44,6 +81,34 @@ def cuadrado(n):
     devuelva un diccionario con las palabras que contiene y su longitud.
     Ejemplo: "Hola Mundo" --> {"Hola": 4, "Mundo": 5}
 """
+
+def length_words(sentence):
+    '''
+    Función que recibe una frase y devuelve un diccionario con las palabras que contiene y su longitud.
+    Parámetros:
+        sentence: Es una cadena de caracteres con una frase.
+    Devuelve:
+        Un diccionario con pares palabra:longitud donde palabra son las palabras que contiene la frase sentence.
+    '''
+    words = sentence.split()
+    lengths = map(len, words)
+    return dict(zip(words, lengths))
+
+print(length_words('Welcome to Python'))
+
+# otra opción...
+
+def length_words(sentence):
+    '''
+    Función que recibe una frase y devuelve un diccionario con las palabras que contiene y su longitud.
+    Parámetros:
+        sentence: Es una cadena de caracteres con una frase.
+    Devuelve:
+        Un diccionario con pares palabra:longitud donde palabra son las palabras que contiene la frase sentence.
+    '''
+    return {word:len(word) for word in sentence.split()}
+
+print(length_words('Welcome to Python'))
 
 # EJERCICIO 4
 
