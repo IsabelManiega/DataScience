@@ -13,6 +13,24 @@
    A continuación muestra la edad del alumno 2 y el alumno 3 y sus notas
 """
 
+class Alumnos:
+    
+    def __init__(self, nombre, edad, asignatura, nota):
+        self.nombre = nombre
+        self.edad = edad
+        self.asignatura = asignatura
+        self.nota = nota
+    
+alumno1 = Alumnos("Pedro", 25, "Matemáticas", 6.8)
+alumno2 = Alumnos("Elia", 26, "Historia", 7.4)
+alumno3 = Alumnos("Sergio", 28, "Lengua", 9.7)
+
+print(alumno2.edad)
+print(alumno3.edad)
+print(alumno1.nota)
+print(alumno2.nota)
+print(alumno3.nota)
+
 
 # Ejercicio 2
 
@@ -20,6 +38,12 @@
     Escribir un programa que pregunte al usuario su edad
     y muestre por pantalla todos los años que ha cumplido (desde 1 hasta su edad).
 """
+def edad():
+    age = int(input("¿Cuántos años tienes? "))
+    for i in range(age):
+        print("Has cumplido " + str(i+1) + " años")
+
+edad()
 
 # Ejercicio 3
 
@@ -27,6 +51,12 @@
     Escribir un programa que pida al usuario una palabra y
     luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
 """
+def palabra():
+    word = input("Introduce una palabra: ")
+    for i in range(len(word)-1, -1, -1):
+        print(word[i])
+
+palabra()
 
 # Ejercicio 4
 
@@ -37,6 +67,13 @@
     otra con todas las letras mayúsculas y otra solo con la primera letra del nombre y de los apellidos en mayúscula.
     El usuario puede introducir su nombre combinando mayúsculas y minúsculas como quiera.
 """
+def nombre_completo():
+    name = input("¿Cómo te llamas? ")
+    print(name.lower())
+    print(name.upper())
+    print(name.title())
+
+nombre_completo()
 
 # Ejercicio 5
 
@@ -46,12 +83,24 @@
     Escribir un programa que pregunte por un número de teléfono con este formato
     y muestre por pantalla el número de teléfono sin el prefijo y la extensión.
 """
+def opcion1():
+    tel = input("Introduce un número de teléfono con el formato +xx-xxxxxxxxx-xx: ")
+    print('El número de teléfono es ', tel[4:-3])
+
+def opcion2():
+    tel = input("Introduce un número de teléfono con el formato +xx-xxxxxxxxx-xx: ")
+    print('El número de teléfono es ', tel.split("-")[1])
+
+opcion1()
+opcion2()
+
 
 # Ejercicio 6
 
 """
     Escribir un programa que pida al usuario que introduzca una frase en la consola y una vocal,
     y después muestre por pantalla la misma frase pero con la vocal introducida en mayúscula.
+    ejemplo geranio --> e --> gEranio
 """
 
 # Ejercicio 7
