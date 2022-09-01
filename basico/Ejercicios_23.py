@@ -1,3 +1,5 @@
+import pandas as pd
+
 # Ejercicio 1
 
 """
@@ -14,13 +16,13 @@
 """
 
 class Alumnos:
-    
+
     def __init__(self, nombre, edad, asignatura, nota):
         self.nombre = nombre
         self.edad = edad
         self.asignatura = asignatura
         self.nota = nota
-    
+
 alumno1 = Alumnos("Pedro", 25, "Matemáticas", 6.8)
 alumno2 = Alumnos("Elia", 26, "Historia", 7.4)
 alumno3 = Alumnos("Sergio", 28, "Lengua", 9.7)
@@ -103,12 +105,33 @@ opcion2()
     ejemplo geranio --> e --> gEranio
 """
 
+def frase():
+    frase = input("Introduce una frase: ")
+    vocal = input("Introduce una vocal en minúscula:  ")
+    print(frase.replace(vocal, vocal.upper()))
+
+frase()
+
 # Ejercicio 7
 
 """
     Escribir un programa que pregunte por consola el precio de un producto en euros con dos decimales
     y muestre por pantalla el número de euros y el número de céntimos del precio introducido.
+    Ejemplo: 24.75 --> 24 Euros con 75 Centimos
 """
+def precio():
+    precio = input("Introduce el precio del producto con dos decimales:  ")
+    print(precio[:precio.find('.')], 'euros y', precio[precio.find('.')+1:], 'céntimos.')
+
+precio()
+
+# otra opción...
+
+def precio1():
+    precio = input("Introduce el precio del producto con dos decimales:  ")
+    print(precio.split(".")[0], 'euros y', precio.split(".")[1], 'céntimos.')
+
+precio1()
 
 # Ejercicio 8
 
@@ -126,19 +149,71 @@ opcion2()
     Abril 33900 20700
 """
 
+def data():
+    datos = {'Mes':['Enero', 'Febrero', 'Marzo', 'Abril'],
+            'Ventas':[30500, 35600, 28300, 33900],
+            'Gastos':[22000, 23400, 18100, 20700]}
+    contabilidad = pd.DataFrame(datos)
+    print(contabilidad)
+    return contabilidad
+
+contabilidad = data()
+contabilidad1 = data()
+
 # Ejercicio 9
 
 """
     Escribir una función que reciba un DataFrame con el formato del ejercicio anterior,
     una lista de meses, y devuelva el balance (ventas - gastos) total en los meses indicados.
 """
+def balance(contabilidad, meses):
+    contabilidad['Balance'] = contabilidad.Ventas - contabilidad.Gastos
+    return contabilidad[contabilidad.Mes.isin(meses)].Balance.sum()
+
+print(balance(contabilidad, ['Enero','Marzo']))
+
+# otra opción...
+
+def balance2(contabilidad, meses):
+    # creamos la columna balance:
+    contabilidad1["Balance"] = contabilidad1["Ventas"] - contabilidad["Gastos"]
+
+    # creamos una lista vacia con los index de los meses
+    list_index = []
+    for i in range(len(meses)):
+        index = contabilidad.index[contabilidad['Mes'] == meses[i]].tolist()[0]
+        list_index.append(index)
+
+    # creamos una lista con los balances de cada mes
+    value_balance = []
+    for value in list_index:
+        balance = contabilidad["Balance"][value]
+        value_balance.append(balance)
+
+    # sumatorio de esos balances
+    resultado = sum(value_balance)
+    return resultado
+
+print(balance(contabilidad1, ['Enero','Marzo']))
+print(balance(contabilidad1, ['Enero','Marzo','Abril']))
+
 
 # Ejercicio 10
 
 """
     Escribir un programa que almacene las asignaturas de un curso
-    (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista, 
+    (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista,
     pregunte al usuario la nota que ha sacado en cada asignatura,
     y después las muestre por pantalla con el mensaje "Has sacado ASIGNATURA la nota de NOTA"
     donde es cada una de las asignaturas de la lista y cada una de las correspondientes notas introducidas por el usuario.
 """
+def subjects():
+    subjects = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
+    scores = []
+    for subject in subjects:
+        score = input("¿Qué nota has sacado en " + subject + "?")
+        scores.append(score)
+    for i in range(len(subjects)):
+        print("En " + subjects[i] + " has sacado " + scores[i])
+
+subjects()
