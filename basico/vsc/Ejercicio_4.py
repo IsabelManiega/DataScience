@@ -9,8 +9,6 @@
 
 # a) Con una función (por ejemplo funcion_multiplicar)
 
-from difflib import diff_bytes
-
 
 def funcion_multiplicar(x, y):
     return x * y
