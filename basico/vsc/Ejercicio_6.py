@@ -119,5 +119,48 @@ def maximo_2(lista):
 
 # EJERCICIO 5
 """
-    Pendiente
+    Escribe el código necesario en Python para:
+
+    * almacenar con una lista de nombre "módulos" las siguientes materias de un programa de Ciencia de Datos:
+
+    * Big Data, Python, Algoritmos, Machine Learning, Deep Learning, NLP.
+
 """
+# 1) Para ese listado imprime todas ellas, 1 a 1
+
+"""
+    2) dentro de ese grupo de materias, existen unas materias que son básicas en todos los programas.
+
+    y que forman la base de conocimientos iniciales para afrontar con éxito el resto de un programa.
+
+    Las mismas son: Python y Algoritmos (aunque en la práctica hay más cosas)
+
+    Se pide almacenar las mismas en un listado secundario, de nombre: "esenciales" (por ejemplo)
+
+    Imprime ese listado al terminar de almacenarlos.
+"""
+
+"""
+    3) Crea un DataFrame, de nombre df con esa información en base
+    a la siguiente relación de módulos y horas de clase módulos:
+    Big Data, Python, Algoritmos, Machine Learning, Deep Learning, NLP
+
+    horas: 25, 15, 5, 15, 5, 10
+"""
+
+# 4) De ese DataFrame, selecciona solamente la columna "horas" e imprímela
+
+# 5) Muestra el gráfico (plot) para la columna "horas"
+
+# 6) De ese DataFrame, selecciona solamente aquellas materias que tienen 20 o más horas de dedicación
+
+# 7) De ese DataFrame, selecciona solamente aquellas materias que tienen menos de 10 horas de dedicación
+
+# 8) De ese DataFrame, selecciona solamente (si fuera posible)
+    # aquellas materias que tienen mas de 26 horas de dedicación
+
+# 9) Apendiza, (si puedes), una nueva columna llamada "docente" con el instructor encargado de la materia.
+
+    # Y cuyos nombres serán: Enrique, Susana, Juan, Ana, Laura, Patricia
+
+
