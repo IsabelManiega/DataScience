@@ -43,19 +43,28 @@
 
 # 1) Imprime los valores de esas variables v1,v2,v3,v4
 
+
 # 2) Descomenta las 2 líneas siguientes para aprender..
 
     # que es posible asignar varios valores en la misma línea
 
     # Y la asignación de valores a variables se hace de forma consecutiva.
 
+# v1,v2,v3,v4 = 4, 5, 7, 8
+# print(v1,v2,v3,v4)
+
 #3) Descomenta la línea siguiente para aprender una posible forma de calcular la media.
 
     #  Usamos nuevamente numpy..
 
+# media_numpy = np.mean([v1,v2,v3,v4])
+# print(media_numpy)
+
+
 # 4) Calcula la media sin usar numpy
 
     # Si el resultado no sale bien, razona cómo debería hacerse..
+
 
 # EJERCICIO 3
 
