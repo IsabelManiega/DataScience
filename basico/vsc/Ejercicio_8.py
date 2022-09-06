@@ -1,14 +1,30 @@
-# EJERCICIO 1 
+# EJERCICIO 1
 
 # Calcula la longitud de una cadena de texto sin usar la instruccion len(cadena)
 
 # 1) Cadena de texto: hola como estas?
 
     # Nombre de la variable: "cadena"
+cadena = "hola como estas?"
+
+# Descomentar para ejecutar:
+# print(cadena)
 
 # 2) Longitud de la cadena de texto
 
+# Descomentar para ejecutar:
+# print(len(cadena))
+
 # 3) Longitud de la cadena de texto calculada con un bucle
+
+def longitud(cadena):
+    contador = 0
+    for letra in cadena:
+        contador += 1
+    return contador
+
+# Descomentar para ejecutar:
+# print(longitud(cadena))
 
 
 # EJERCICIO 2
@@ -23,9 +39,33 @@
 # Big Data      ->  8
 # NLP           ->  6
 
+notas = {"Python": 10, "Big Data": 8, "NLP": 6}
+# print(notas)
+
+values = [value for value in notas.values()]
+# Descomentar para ejecutar:
+# print(values)
+
+media = sum(values) / len(values)
+# Descomentar para ejecutar:
+# print(media)
+
+
 # 1) Muestra el valor de las claves
 
+def claves(diccionario):
+    return diccionario.keys()
+
+# Descomentar para ejecutar:
+# print(claves(notas))
+
 # 2) Muestra el valor de los valores del diccionario
+
+def valores(diccionario):
+    return diccionario.values()
+
+# Descomentar para ejecutar:
+# print(valores(notas))
 
 # 3) Apendiza en el diccionario un nuevo elemento:
 
