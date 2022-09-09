@@ -18,6 +18,15 @@ import pandas as pd
     Si sabes, hazlo de varias formas diferentes
 """
 
+def fibonacci():
+    L = [0, 1]
+    while (len(L) < 10):
+        L.append(L[-1] + L[-2])
+    return L
+
+# print(fibonacci())
+
+
 
 # EJERCICIO 2
 
