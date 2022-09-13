@@ -1,3 +1,4 @@
+from email.mime import base
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -120,4 +121,7 @@ df.loc[df["Sex"] == "male", "Sex"] = 0
 # print(df)
 
 df.loc[df["Sex"] == "female", "Sex"] = 1
-# print(df)
+
+df[["Sex"]] = df[["Sex"]].astype(int)
+
+print(df.describe())
