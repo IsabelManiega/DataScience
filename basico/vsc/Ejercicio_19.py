@@ -5,7 +5,7 @@
     Por ejemplo la cadena "estoy probando" debería devolver la cadena "odnaborp yotse".
 """
 
-def inversa (cadena):
+def inversa(cadena):
     invertida = ""
     cont = len(cadena)
     indice = -1
@@ -15,7 +15,8 @@ def inversa (cadena):
         cont -= 1
     return invertida
 
-print(inversa("Hola mundo"))
+# Descomentar para ejecutar:
+# print("Primera opción inversa: ", inversa("Hola mundo"))
 
 # Otra opción..
 
@@ -23,14 +24,16 @@ def inversa2(cadena):
     return cadena[::-1]
 
 resultado = inversa2("Hola mundo2")
-print(resultado)
+
+# Descomentar para ejecutar:
+# print("Segunda opción inversa: ", resultado)
 
 
 
 # Ejercicio 2
 
 """
-    Definir una funcion es_palindromo() que reconoce palindromo 
+    Definir una funcion es_palindromo() que reconoce palindromo
     palabras  que tiene el mismo aspecto escritas invertidas), ejemplo: es_palindromo("radar")
     tendría que devolver True.
 """
@@ -45,9 +48,10 @@ def palindromo(cadena):
         fin -= 1
     return False
 
-cadena = input("introduce una letra por favor: ")
+# cadena = input("introduce una letra por favor: ")
 
-print(palindromo(cadena))
+# Descomentar para ejecutar:
+# print(palindromo(cadena))
 
 # otra opción...
 def es_palindromo(cadena):
@@ -65,7 +69,8 @@ def es_palindromo(cadena):
         print("Es palindromo") # es porque recorrió todo el ciclo for y todas las
                                             # letras son iguales
 
-es_palindromo("radar")
+# Descomentar para ejecutar:
+# es_palindromo(cadena)
 
 # Ejercicio 3
 
@@ -75,19 +80,30 @@ es_palindromo("radar")
     aninado.
 """
 
-def superposicion (lista1, lista2):
+# Una opción...
+# def superposicion (lista1, lista2):
+#     for i in lista1:
+#         for x in lista2:
+#             if i == x:
+#                 return True
+#     return False
+
+
+# opcion más corta...
+def superposicion(lista1, lista2):
     for i in lista1:
-        for x in lista2:
-            if i == x:
-                return True
+        if i in lista2:
+            return True
     return False
 
 lista1 = [1, 2, 3]
 lista2 = [1, 4, 8]
 
-print("Resultado superposicion 1: ", superposicion(lista1, lista2))
+# Descomentar para ejecutar:
+# print("Resultado superposicion 1: ", superposicion(lista1, lista2))
 
 lista1 = [0, 2, 3]
 lista2 = [1, 4, 8]
 
-print("Resultado superposicion 2: ", superposicion(lista1, lista2))
+# Descomentar para ejecutar:
+# print("Resultado superposicion 2: ", superposicion(lista1, lista2))
