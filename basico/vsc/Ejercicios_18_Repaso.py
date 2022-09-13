@@ -3,7 +3,7 @@
 
 """
     Definir una función max()
-    que tome como argumento dos números y devuelva el mayor de ellos. 
+    que tome como argumento dos números y devuelva el mayor de ellos.
     (Es cierto que python tiene una función max() incorporada,
     pero hacerla nosotros mismos es un muy buen ejercicio).
 """
@@ -19,7 +19,8 @@ def maximo(n1, n2):
     else:
         return "son iguales"
 
-print(maximo(8, 5))
+# Descomentar para ejecutar:
+# print(maximo(8, 5))
 
 
 # EJERCICIO 2
@@ -41,7 +42,8 @@ def max_de_tres(n1, n2, n3):
     else:
         return "Son iguales"
 
-print(max_de_tres(8, 5, 9))
+# Descomentar para ejecutar:
+# print(max_de_tres(8, 5, 9))
 
 # EJERCICIO 3
 
@@ -59,9 +61,10 @@ def largo_cadena(lista):
         cont += 1
     return cont
 
-print(largo_cadena("hola mundo"))
-print(largo_cadena([25, 30]))
-print("len: ", len([25, 30]))
+# Descomentar para ejecutar:
+# print(largo_cadena("hola mundo"))
+# print(largo_cadena([25, 30]))
+# print("len: ", len([25, 30]))
 
 # EJERCICIO 4
 
@@ -79,8 +82,23 @@ def es_vocal(x):
     else:
         return False
 
-print("Es vocal: ", es_vocal("a"))
-print("Es consonante: ", es_vocal("b"))
+# Descomentar para ejecutar:
+# print("Es vocal: ", es_vocal("a"))
+# print("Es consonante: ", es_vocal("b"))
+
+# otra opción...
+
+def es_vocal_1(x):
+    x = x.lower()
+    listado_comparacion = ["a", "e", "i", "o", "u"]
+    if x in listado_comparacion:
+        return True
+    return False
+
+# Descomentar para ejecutar:
+# print("Es vocal: ", es_vocal_1("A"))
+# print("Es vocal: ", es_vocal_1("a"))
+# print("Es consonante: ", es_vocal_1("b"))
 
 # EJERCICIO 5
 
@@ -95,14 +113,14 @@ def suma(lista):
         suma += i
     return suma
 
-   
 def multip(lista):
     multiplicacion = 1
     for i in lista:
         multiplicacion *= i
     return multiplicacion
 
-print("suma: ", suma([8, 5]))
-print("multiplicacion: ", multip([8, 5]))
+# Descomentar para ejecutar:
+# print("suma: ", suma([8, 5]))
+# print("multiplicacion: ", multip([8, 5]))
 
 print("Enhorabuena acabaste los ejercicios")
