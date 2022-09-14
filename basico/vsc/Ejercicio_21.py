@@ -11,13 +11,14 @@ def es_bisiesto():
     print("Comprueba años bisiestos")
     a = int(input("Escriba un años y le dire si es bisiesto: "))
     if a % 4 == 0 and (not(a % 100 == 0)):
-        print("El año", a, "es un año bisiesto porque es multiplo de 4")
+        return "El año", a, "es un año bisiesto porque es multiplo de 4"
     elif a % 400 == 0:
-        print("El año", a, "es un año bisiesto porque es multiplo de 400")
+        return "El año", a, "es un año bisiesto porque es multiplo de 400"
     else:
-        print("El año", a, "no es bisiesto")
+        return "El año", a, "no es bisiesto"
 
-es_bisiesto()
+# Descomentar para ejecutar:
+# print(es_bisiesto())
 
 # EJERCICIO 2
 
@@ -31,8 +32,7 @@ es_bisiesto()
 """
 
 def calculo(dinero, inte, cant_anos):
-    x = dinero * ((1 + inte/100) **cant_anos)
-    return x
+    return dinero * ((1 + inte/100) **cant_anos)
 
 def main():
     dolares = int(input("Cuantos dolares: "))
@@ -42,9 +42,10 @@ def main():
     print("\n")
 
     resultado = calculo(dolares, interes, anos)
-    print("Cuando pasen", anos, u"años, con un", interes, u"de interes, usted habrá generado", resultado, "dolares.")
+    return "Cuando pasen", anos, "años, con un", interes, "de interes, usted habrá generado", resultado, "dolares."
 
-main()
+# Descomentar para ejecutar:
+# print(main())
 
 # EJERCICIO 3
 
