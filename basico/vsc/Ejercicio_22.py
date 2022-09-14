@@ -18,7 +18,7 @@ def apply_discount(price, discount):
         El precio final tras aplicar el descuento.
     '''
     return price - price * discount / 100
-    
+
 def apply_IVA(price, percentage):
     '''
     Función que aplica un IVA a una cantidad.
@@ -44,8 +44,9 @@ def price_basket(basket, function):
         total += function(price, discount)
     return total
 
-print('El precio de la compra tras aplicar los descuentos es: ', price_basket({1000:20, 500:10, 100:1}, apply_discount))
-print('El precio de la compra tras aplicar el IVA es: ', price_basket({1000:20, 500:10, 100:1}, apply_IVA))
+# Descomentar para ejecutar:
+# print('El precio de la compra tras aplicar los descuentos es: ', price_basket({1000:20, 500:10, 100:1}, apply_discount))
+# print('El precio de la compra tras aplicar el IVA es: ', price_basket({1000:20, 500:10, 100:1}, apply_IVA))
 
 # EJERCICIO 2
 
@@ -72,7 +73,8 @@ def aplica_funcion_lista(funcion, lista):
 def cuadrado(n):
     return n * n
 
-print(aplica_funcion_lista(cuadrado, [1, 2, 3, 4]))
+# Descomentar para ejecutar:
+# print(aplica_funcion_lista(cuadrado, [1, 2, 3, 4]))
 
 # EJERCICIO 3
 
@@ -94,7 +96,8 @@ def length_words(sentence):
     lengths = map(len, words)
     return dict(zip(words, lengths))
 
-print(length_words('Welcome to Python'))
+# Descomentar para ejecutar:
+# print(length_words('Welcome to Python'))
 
 # otra opción...
 
@@ -108,7 +111,8 @@ def length_words(sentence):
     '''
     return {word:len(word) for word in sentence.split()}
 
-print(length_words('Welcome to Python'))
+# Descomentar para ejecutar:
+# print(length_words('Welcome to Python'))
 
 # EJERCICIO 4
 
@@ -151,7 +155,8 @@ def apply_grade(scores):
     '''
     return list(map(grade, scores))
 
-print(apply_grade([6.5, 5, 3.4, 8.2, 2.1, 9.7, 10]))
+# Descomentar para ejecutar:
+# print(apply_grade([6.5, 5, 3.4, 8.2, 2.1, 9.7, 10]))
 
 # EJERCICIO 5
 
@@ -161,26 +166,8 @@ print(apply_grade([6.5, 5, 3.4, 8.2, 2.1, 9.7, 10]))
     y las calificaciones correspondientes a las notas.
 """
 
-def grade(score):
-    '''
-    Función que devuelve la calificación correspondiente a una nota.
-    Parámetros:
-        score: Es un valor real entre 0 y 10.
-    Devuelve:
-        La calificación correspondiente a la nota score.
-    '''
-    if score < 5:
-        return 'SS'
-    elif score < 7:
-        return 'AP'
-    elif score < 9:
-        return 'NT'
-    elif score < 10:
-        return 'SB'
-    else:
-        return 'MH'
 
-def apply_grade(scores):
+def apply_grade_1(scores):
     '''
     Función que recibe un diccionario de asignaturas y notas y devuelve otro con las asignaturas en mayúsculas y las calificaciones correspondientes a las notas.
     Parámetros:
@@ -192,30 +179,12 @@ def apply_grade(scores):
     grades = map(grade, scores.values())
     return dict(zip(subjects, grades))
 
-print(apply_grade({'Matemáticas':6.5, 'Física':5, 'Química':3.4, 'Economía':8.2, 'Historia':9.7, 'Programación':10}))
+# Descomentar para ejecutar:
+# print(apply_grade_1({'Matemáticas':6.5, 'Física':5, 'Química':3.4, 'Economía':8.2, 'Historia':9.7, 'Programación':10}))
 
 # Otra opción...
 
-def grade(score):
-    '''
-    Función que devuelve la calificación correspondiente a una nota.
-    Parámetros:
-        score: Es un valor real entre 0 y 10.
-    Devuelve:
-        La calificación correspondiente a la nota score.
-    '''
-    if score < 5:
-        return 'SS'
-    elif score < 7:
-        return 'AP'
-    elif score < 9:
-        return 'NT'
-    elif score < 10:
-        return 'SB'
-    else:
-        return 'MH'
-
-def apply_grade(scores):
+def apply_grade_2(scores):
     '''
     Función que recibe un diccionario de asignaturas y notas y devuelve otro con las asignaturas en mayúsculas y las calificaciones correspondientes a las notas.
     Parámetros:
@@ -225,7 +194,8 @@ def apply_grade(scores):
     '''
     return {subject.upper():grade(score) for subject, score in scores.items()}
 
-print(apply_grade({'Matemáticas':6.5, 'Física':5, 'Química':3.4, 'Economía':8.2, 'Historia':9.7, 'Programación':10}))
+# Descomentar para ejecutar:
+# print(apply_grade_2({'Matemáticas':6.5, 'Física':5, 'Química':3.4, 'Economía':8.2, 'Historia':9.7, 'Programación':10}))
 
 # EJERCICIO 6
 
@@ -238,8 +208,8 @@ def password():
     key = "contraseña"
     password = input("Introduce la contraseña: ")
     if key == password.lower():
-        print("La contaseña coincide")
-    else:
-        print("La contraseña no coincide")
+        return "La contaseña coincide"
+    return "La contraseña no coincide"
 
-password()
+# Descomentar para ejecutar:
+# print(password())
