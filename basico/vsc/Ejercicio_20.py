@@ -14,7 +14,8 @@
 def generar_n_caracteres(n, caracter):
     return n * caracter
 
-print(generar_n_caracteres(5, 'x'))
+# Descomentar para ejecutar:
+# print("1) generar_n_caracteres", generar_n_caracteres(5, 'x'))
 
 # EJERCICIO 2
 
@@ -28,7 +29,8 @@ def procedimiento(lista):
     for i in lista:
         print(i * "x")
 
-procedimiento([4, 9, 7])
+# Descomentar para ejecutar:
+# procedimiento([4, 9, 7])
 
 # EJERCICIO 3
 
@@ -43,7 +45,24 @@ def mas_larga(lista):
             mas_larga = i
     return mas_larga
 
-print(mas_larga(["coche", "tortuga", "bici"]))
+# Descomentar para ejecutar:
+# print(mas_larga(["coche", "tortuga", "bici"]))
+
+# Otra opción contando caracteres...
+
+diccionario = {}
+
+def numero_letras(lista, diccionario):
+    for palabra in lista:
+        contador = 0
+        for letra in palabra:
+            contador += 1
+        diccionario[palabra] = contador
+    return diccionario
+
+# Descomentar para ejecutar:
+# print(numero_letras(["coche", "tortuga", "bici"], diccionario))
+# print(max(diccionario))
 
 # EJERCICIO 4
 
@@ -53,11 +72,14 @@ print(mas_larga(["coche", "tortuga", "bici"]))
 """
 
 def filtrar_palabras(lista, n):
+    listado = []
     for i in lista:
         if len(i) > n:
-            print(i)
+            listado.append(i)
+    return listado
 
-filtrar_palabras(["coche", "tortuga", "bici"], 4)
+# Descomentar para ejecutar:
+# print(filtrar_palabras(["coche", "tortuga", "bici"], 4))
 
 # EJERCICIO 5
 
@@ -71,9 +93,10 @@ def c_mayusculas(cadena):
     for i in cadena:
         if i != i.lower(): #Recordar que lower() convierte una cadena en minúsculas
             cont += 1
-    print("La cadena tiene", cont, "mayuscula/s")
+    return "La cadena tiene", cont, "mayuscula/s"
 
-c_mayusculas("Mas que Coches")
+# Descomentar para ejecutar:
+# print(c_mayusculas("Mas que Coches"))
 
 # EJERCICIO 6
 
@@ -87,9 +110,10 @@ def mayores(tup):
     for i in tup:
         if i > 20:
             cont += 1
-    print("Hay", cont, "numeros mayores a 20")
-    
-mayores((15, 20, 16, 31, 40, 50, 11, 13, 48, 60))
+    return "Hay", cont, "numeros mayores a 20"
+
+# Descomentar para ejecutar:
+# print(mayores((15, 20, 16, 31, 40, 50, 11, 13, 48, 60)))
 
 # EJERCICIO 7
 
@@ -103,9 +127,9 @@ def main():
     lista = []
     for i in range(x):
         a = input("Ingresa el nombre: ")
-        lista.append(a)   
+        lista.append(a)
     print("\n")
-    
+
     comienzo = input("Con que letra empieza el nombre?: ")
     cont = 0
     for i in lista:
@@ -113,7 +137,8 @@ def main():
             cont += 1
     return cont
 
-main()
+# Descomentar para ejecutar:
+# print(main())
 
 # EJERCICIO 8
 
@@ -135,5 +160,6 @@ def contar_vocales(cadena):
                 contador += 1
         print("Hay %d %s." % (contador, x))
 
-contar_vocales("Hola Mundo")
+# Descomentar para ejecutar:
+# contar_vocales("Hola Mundo")
 
