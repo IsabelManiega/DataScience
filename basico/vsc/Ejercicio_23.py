@@ -27,11 +27,12 @@ alumno1 = Alumnos("Pedro", 25, "Matemáticas", 6.8)
 alumno2 = Alumnos("Elia", 26, "Historia", 7.4)
 alumno3 = Alumnos("Sergio", 28, "Lengua", 9.7)
 
-print(alumno2.edad)
-print(alumno3.edad)
-print(alumno1.nota)
-print(alumno2.nota)
-print(alumno3.nota)
+# Descomentar para ejecutar:
+# print("Edad alumno2: ", alumno2.edad)
+# print("Edad alumno3: ", alumno3.edad)
+# print("Notas alumno1: ", alumno1.nota)
+# print("Notas alumno2: ", alumno2.nota)
+# print("Notas alumno3: ", alumno3.nota)
 
 
 # Ejercicio 2
@@ -45,7 +46,8 @@ def edad():
     for i in range(age):
         print("Has cumplido " + str(i+1) + " años")
 
-edad()
+# Descomentar para ejecutar:
+# edad()
 
 # Ejercicio 3
 
@@ -55,10 +57,16 @@ edad()
 """
 def palabra():
     word = input("Introduce una palabra: ")
-    for i in range(len(word)-1, -1, -1):
-        print(word[i])
+    # 1 opción...
+    # for i in range(len(word)-1, -1, -1):
+        # print(word[-i])
 
-palabra()
+    # 2 opción...
+    for i in range(1, len(word)+1):
+        print(word[-i])
+
+# Descomentar para ejecutar:
+# palabra()
 
 # Ejercicio 4
 
@@ -75,7 +83,8 @@ def nombre_completo():
     print(name.upper())
     print(name.title())
 
-nombre_completo()
+# Descomentar para ejecutar:
+# nombre_completo()
 
 # Ejercicio 5
 
@@ -87,14 +96,15 @@ nombre_completo()
 """
 def opcion1():
     tel = input("Introduce un número de teléfono con el formato +xx-xxxxxxxxx-xx: ")
-    print('El número de teléfono es ', tel[4:-3])
+    return f'El número de teléfono es {tel[4:-3]}'
 
 def opcion2():
     tel = input("Introduce un número de teléfono con el formato +xx-xxxxxxxxx-xx: ")
-    print('El número de teléfono es ', tel.split("-")[1])
+    return f'El número de teléfono es {tel.split("-")[1]}'
 
-opcion1()
-opcion2()
+# Descomentar para ejecutar:
+# print(opcion1())
+# print(opcion2())
 
 
 # Ejercicio 6
@@ -108,9 +118,11 @@ opcion2()
 def frase():
     frase = input("Introduce una frase: ")
     vocal = input("Introduce una vocal en minúscula:  ")
-    print(frase.replace(vocal, vocal.upper()))
+    vocal = vocal.lower()
+    return frase.replace(vocal, vocal.upper())
 
-frase()
+# Descomentar para ejecutar:
+# print(frase())
 
 # Ejercicio 7
 
@@ -121,17 +133,19 @@ frase()
 """
 def precio():
     precio = input("Introduce el precio del producto con dos decimales:  ")
-    print(precio[:precio.find('.')], 'euros y', precio[precio.find('.')+1:], 'céntimos.')
+    return f"{precio[:precio.find('.')]} euros y {precio[precio.find('.')+1:]} céntimos."
 
-precio()
+# Descomentar para ejecutar:
+# print(precio())
 
 # otra opción...
 
 def precio1():
     precio = input("Introduce el precio del producto con dos decimales:  ")
-    print(precio.split(".")[0], 'euros y', precio.split(".")[1], 'céntimos.')
+    return f"{precio.split('.')[0]} euros y {precio.split('.')[1]} céntimos."
 
-precio1()
+# Descomentar para ejecutar:
+# print(precio1())
 
 # Ejercicio 8
 
@@ -154,11 +168,10 @@ def data():
             'Ventas':[30500, 35600, 28300, 33900],
             'Gastos':[22000, 23400, 18100, 20700]}
     contabilidad = pd.DataFrame(datos)
-    print(contabilidad)
+    # print(contabilidad)
     return contabilidad
 
 contabilidad = data()
-contabilidad1 = data()
 
 # Ejercicio 9
 
@@ -170,13 +183,14 @@ def balance(contabilidad, meses):
     contabilidad['Balance'] = contabilidad.Ventas - contabilidad.Gastos
     return contabilidad[contabilidad.Mes.isin(meses)].Balance.sum()
 
-print(balance(contabilidad, ['Enero','Marzo']))
+# Descomentar para ejecutar:
+# print(balance(contabilidad, ['Enero','Marzo']))
 
 # otra opción...
 
 def balance2(contabilidad, meses):
     # creamos la columna balance:
-    contabilidad1["Balance"] = contabilidad1["Ventas"] - contabilidad["Gastos"]
+    contabilidad["Balance"] = contabilidad["Ventas"] - contabilidad["Gastos"]
 
     # creamos una lista vacia con los index de los meses
     list_index = []
@@ -194,8 +208,9 @@ def balance2(contabilidad, meses):
     resultado = sum(value_balance)
     return resultado
 
-print(balance(contabilidad1, ['Enero','Marzo']))
-print(balance(contabilidad1, ['Enero','Marzo','Abril']))
+# Descomentar para ejecutar:
+# print(balance2(contabilidad, ['Enero','Marzo']))
+# print(balance2(contabilidad, ['Enero','Marzo','Abril']))
 
 
 # Ejercicio 10
@@ -216,4 +231,5 @@ def subjects():
     for i in range(len(subjects)):
         print("En " + subjects[i] + " has sacado " + scores[i])
 
-subjects()
+# Descomentar para ejecutar:
+# subjects()
