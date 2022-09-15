@@ -1,0 +1,7 @@
+* corto tiempo:
+    * POO ejercicios
+
+* Largo tiempo:
+    * Estadistica
+    * Big Data
+    * Backend

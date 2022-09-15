@@ -1,0 +1,7 @@
+Release Version 0.9.0    15/09/2022    isabelmaniega@hotmail.com
+
+    - Nuevas funcionalidades:
+        * Añadida la parte de ejercicios de Python básico
+
+    - Bug fixes:
+        *
