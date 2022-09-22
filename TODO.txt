@@ -1,7 +1,7 @@
 * corto tiempo:
-    * POO ejercicios
+    * Estadistica ejercicios
 
 * Largo tiempo:
-    * Estadistica
     * Big Data
     * Backend
+    * Dockers
