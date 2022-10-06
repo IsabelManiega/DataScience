@@ -5,9 +5,20 @@ import csv
 import os
 from pydantic import BaseModel
 
+""" Realizar los distintos metodos con el IRIS dataset """
+
 
 # Creamos nuestra primera aplicación FastAPI:
 app = FastAPI()
+
+# Modelo de datos:
+class Iris(BaseModel):
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+    species: str
+
 
 # doy la ruta donde se encuentra el dataset:
 MEDIA_ROOT = "/home/isabel/FEI_projects/DataScience/media/iris.csv"
@@ -36,18 +47,8 @@ async def iris(response: Response):
         response.status_code = status.HTTP_404_NOT_FOUND
         return "404 NOT FOUND"
 
-# TODO: Realizar los distintos metodos con el IRIS dataset:
-
 
 # Método POST para insertar un dato al final del iris dataset.
-
-# Modelo de datos:
-class Iris(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-    species: str
 
 # Método POST  a la url "/insertData/"
 @app.post("/insertData/", status_code=201)
@@ -69,6 +70,24 @@ async def insertData(item: Iris):
     # retornamos los valores que comprende la ultima fila añadida
     return item
 
-# TODO: Método PUT actualizaremos el último dato insertado.
+# Método PUT actualizaremos el último dato insertado.
+
+# Método PUT a la url "/updateData/"
+# llamaremos a nuestra aplicación (app.put)
+@app.put("/updateData/{item_id}")
+async def updateData(item_id: int, item:Iris):
+    # Leemos el csv con ayuda de pandas:
+    df = pd.read_csv(MEDIA_ROOT)
+    # Modificamos el último dato con los valores que nos lleguen:
+    df.loc[df.index[-1], "sepal_length"] = item.sepal_length
+    df.loc[df.index[-1], "sepal_width"] = item.sepal_width
+    df.loc[df.index[-1], "petal_length"] = item.petal_length
+    df.loc[df.index[-1], "petal_width"] = item.petal_width
+    df.loc[df.index[-1], "species"] = item.species
+    # convertir a csv
+    df.to_csv(MEDIA_ROOT, index=False)
+    # Retornamos el id que hemos modificado y el dato en formato diccionario:
+    return {"item_id": item_id, **item.dict()}
+
 # TODO: Método DELETE para eliminar ese último dato del archivo.
 
