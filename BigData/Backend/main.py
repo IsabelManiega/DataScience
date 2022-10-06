@@ -89,5 +89,15 @@ async def updateData(item_id: int, item:Iris):
     # Retornamos el id que hemos modificado y el dato en formato diccionario:
     return {"item_id": item_id, **item.dict()}
 
-# TODO: Método DELETE para eliminar ese último dato del archivo.
+# Método DELETE para eliminar ese último dato del archivo.
+# Método DELETE a la url "/deleteData/"
+@app.delete("/deleteData/{item_id}")
+async def deleteData(item_id: int):
+    # Leemos el csv con ayuda de pandas:
+    df = pd.read_csv(MEDIA_ROOT)
+    # Eliminar la última fila:
+    df.drop(df.index[-1], inplace=True)
+    # convertir a csv
+    df.to_csv(MEDIA_ROOT, index=False)
+    return {"item_id": item_id, "msg": "Eliminado"}
 
