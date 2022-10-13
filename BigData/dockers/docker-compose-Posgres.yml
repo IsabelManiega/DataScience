@@ -13,7 +13,6 @@ services:
       POSTGRES_PASSWORD: cursoPython
       POSTGRES_USER: IsaMan
 
-
   adminer:
     image: adminer
     restart: always
