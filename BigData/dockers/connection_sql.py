@@ -11,7 +11,7 @@ conn = psycopg2.connect(database="test", user="IsaMan", password="cursoPython",
 
 cur = conn.cursor()
 
-def createDatbase():
+def createDatabase():
     conn = psycopg2.connect(user="IsaMan", password="cursoPython",
                             host="localhost", port=5432)
 
