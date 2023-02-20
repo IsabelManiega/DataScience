@@ -1,0 +1,7 @@
+Release Version 0.0.1    20/02/2022    isabelmaniega@hotmail.com
+
+    - Nuevas funcionalidades:
+        * Preparando mi repositorio
+
+    - Bug fixes:
+        *

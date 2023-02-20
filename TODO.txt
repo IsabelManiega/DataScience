@@ -1,0 +1,4 @@
+* Corto:
+    * agregar funcion resta
+* largo:
+    * describir la funcion multiplicar
