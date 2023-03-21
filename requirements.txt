@@ -23,6 +23,7 @@ cycler==0.11.0
 debugpy==1.6.6
 decorator==5.1.1
 defusedxml==0.7.1
+dnspython==2.3.0
 entrypoints==0.4
 executing==1.2.0
 fastapi==0.93.0
@@ -98,6 +99,7 @@ pycparser==2.21
 pydantic==1.10.5
 pydeck==0.8.0
 Pygments==2.14.0
+pymongo==4.3.3
 Pympler==1.0.1
 pyparsing==3.0.9
 pyrsistent==0.19.3
